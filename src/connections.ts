@@ -19,10 +19,12 @@ const connectToDb = async () => {
   try {
     await pool.connect();
     console.log('Connected to the database');
+    console.log('What would you like to do?');
   } catch (error) {
     console.error('Error connecting to the database: ', error);
     process.exit(1);
   }
 };
+
 
 export { pool, connectToDb };
