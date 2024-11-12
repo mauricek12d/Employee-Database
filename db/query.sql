@@ -1,6 +1,6 @@
 SELECT 
-    employee.id, 
-    employee.name, 
+    employee.id,
+    employee.name,
     role.title, 
     department.name AS department_name
 FROM 
