@@ -5,6 +5,8 @@ dotenv.config();
 import pg from 'pg';    
 const { Pool } = pg;
 
+import inquirer from 'inquirer';
+
 // Create a new Pool instance
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -20,6 +22,17 @@ const connectToDb = async () => {
     await pool.connect();
     console.log('Connected to the database');
     console.log('What would you like to do?');
+
+    const { action } = await inquirer.prompt([
+      {
+        type: 'list',
+        name: 'action',
+        message: 'Select an action',
+        choices: ['Create a new user', 'View all users', 'Update a user', 'Delete a user'],
+      },
+    ]);
+
+    console.log('You selected: ', action);
   } catch (error) {
     console.error('Error connecting to the database: ', error);
     process.exit(1);
