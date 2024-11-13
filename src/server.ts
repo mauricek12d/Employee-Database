@@ -97,3 +97,19 @@ app.put('/departments/:id', async (req, res) => {
     }
 });
 
+// Usage of INQUIRER
+const promptUser = async () => {
+  const { action } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'action',
+      message: 'Select an action',
+      choices: ['Create a new user', 'View all users', 'Update a user', 'Delete a user'],
+    },
+  ]);
+
+  console.log('You selected: ', action);
+};
+
+promptUser();
+
