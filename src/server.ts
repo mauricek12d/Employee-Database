@@ -1,18 +1,34 @@
 import express from 'express';
-import inquirer from 'inquirer';
 import { QueryResult } from 'pg';
+import inquirer from 'inquirer';
 import { pool, connectToDb } from './connections.js';
 
 await connectToDb();
 
+// Defines the port
 const PORT = process.env.PORT || 3001; 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+// Middleware
+app.use(express.urlencoded({ extended: false })); 
 app.use(express.json());
 
-app.listen(PORT, () => { 
-  console.log(`Server listening on port ${PORT}`);
+const promptUser = async () => {
+  const { action } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'action',
+      message: 'Select an action',
+      choices: ['View All Employees', 'Add Employee', 'Update Employee Role', 'View All Roles', 'Add Role', 'View All Departments', 'Add Department'],
+    },
+  ]);
+  return action;
+};
+
+// request to the root
+app.get('/', async (_req, res) => {
+  const action = await promptUser();
+  res.json({ action });
 });
 
 // function to get all departments
@@ -97,19 +113,9 @@ app.put('/departments/:id', async (req, res) => {
     }
 });
 
-// Usage of INQUIRER
-const promptUser = async () => {
-  const { action } = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'action',
-      message: 'Select an action',
-      choices: ['Create a new user', 'View all users', 'Update a user', 'Delete a user'],
-    },
-  ]);
+app.use((_req, res) => {
+    res.status(404).end();
+});
 
-  console.log('You selected: ', action);
-};
-
-promptUser();
-
+app.listen(PORT, () => {  
+});
