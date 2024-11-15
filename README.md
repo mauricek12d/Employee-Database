@@ -49,7 +49,6 @@ The **Employee Database** is a structured system designed to manage and store in
 ## Setup Instructions
 
 
-
 CREATE DATABASE employee_db;
 USE employee_db;
 SOURCE schema.sql;
@@ -64,7 +63,7 @@ SOURCE schema.sql;
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/employee-database.git
+   git clone https://github.com/mauricek12d/Employee-Database.git
    cd employee-database
 
 
