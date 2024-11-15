@@ -53,7 +53,7 @@ Database Management System (e.g., MySQL, PostgreSQL, SQLite)
 Admin access to configure tables and roles
 
 Clone the Repo
-git clone https://github.com/your-repo/employee-database.git
+git clone https://github.com/mauricek12d/Employee-Database.git
 cd employee-database
 
 
