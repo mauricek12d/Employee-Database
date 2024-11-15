@@ -48,6 +48,13 @@ The **Employee Database** is a structured system designed to manage and store in
 
 ## Setup Instructions
 
+
+
+CREATE DATABASE employee_db;
+USE employee_db;
+SOURCE schema.sql;
+
+
 ### Prerequisites
 
 - Database Management System (e.g., MySQL, PostgreSQL, SQLite)
