@@ -48,7 +48,7 @@ The **Employee Database** is a structured system designed to manage and store in
 
 ## Setup Instructions
 
-git clone https://github.com/your-repo/employee-database.git
+git clone https://github.com/mauricek12d/Employee-Database.git
 cd employee-database
 
 CREATE DATABASE employee_db;
