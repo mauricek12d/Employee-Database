@@ -48,6 +48,14 @@ The **Employee Database** is a structured system designed to manage and store in
 
 ## Setup Instructions
 
+Prerequisites
+Database Management System (e.g., MySQL, PostgreSQL, SQLite)
+Admin access to configure tables and roles
+
+Clone the Repo
+git clone https://github.com/your-repo/employee-database.git
+cd employee-database
+
 
 CREATE DATABASE employee_db;
 USE employee_db;
@@ -58,6 +66,22 @@ SOURCE schema.sql;
 
 - Database Management System (e.g., MySQL, PostgreSQL, SQLite)
 - Admin access to configure tables and roles
+
+## Contributions
+We welcome contributions to improve the Employee Database. Please follow these steps:
+
+Fork the repository and create a new branch
+git checkout -b feature/new-feature
+
+Commit your changes and push to your branch:
+git commit -m "Add new feature"
+git push origin feature/new-feature
+
+Submit a pull request and describe your changes.
+
+
+
+
 
 ### Installation
 
