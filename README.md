@@ -48,6 +48,31 @@ The **Employee Database** is a structured system designed to manage and store in
 
 ## Setup Instructions
 
+git clone https://github.com/your-repo/employee-database.git
+cd employee-database
+
+CREATE DATABASE employee_db;
+USE employee_db;
+SOURCE schema.sql;
+
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=employee_db
+
+## Contribution Guidlines
+
+Fork the Repository and Create a new Branch
+git checkout -b feature/new-feature
+
+Commit Changes and Push to Branch
+git commit -m "Add new feature"
+git push origin feature/new-feature
+
+Submit a pull request and describe your changes. 
+
+
+
+
 ### Prerequisites
 
 - Database Management System (e.g., MySQL, PostgreSQL, SQLite)
