@@ -1,98 +1,137 @@
-# Employee Database README
+# 🧑‍💼 Employee Database Management System
 
-## Overview
 
-The **Employee Database** is a structured system designed to manage and store information about employees within an organization. It provides essential features for adding, updating, retrieving, and analyzing employee data efficiently. The system aims to streamline HR processes, enhance data accessibility, and improve operational management.
+A command-line interface (CLI) application built with Node.js, Inquirer, and MySQL to manage employee records for a company. It allows users to view, add, update, and delete departments, roles, and employees through a dynamic SQL-powered interface.
 
----
 
-## Features
+## 📚 Table of Contents
 
-- **Employee Management**: Add, edit, delete, and retrieve employee records.
-- **Data Organization**: Organize employees by department, role, or status (e.g., active, terminated).
-- **Search and Filter**: Search for employees by name, ID, department, or other criteria.
-- **Reporting**: Generate reports such as:
-  - Headcount by department
-  - Employee tenure and performance summaries
-  - Salary distribution
-- **Secure Access**: Role-based permissions to protect sensitive employee data.
-- **Audit Logs**: Track changes to records for compliance and accountability.
 
----
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Database Schema](#database-schema)
+- [Demo](#demo)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Database Structure
 
-### Tables
+## ✅ Features
 
-1. **Employees**
-   - `employee_id` (Primary Key)
-   - `first_name`
-   - `last_name`
-   - `department_id` (Foreign Key)
-   - `manager_id` (Self-referential Foreign Key)
-   - `salary`
 
-2. **Departments**
-   - `department_id` (Primary Key)
-   - `department_name`
-   - `manager_id` (Foreign Key)
-   - `location`
+- View all departments, roles, and employees
+- Add a new department, role, or employee
+- Update an employee's role
+- Delete employees, roles, or departments
+- Perform queries using asynchronous MySQL logic
+- Organized interface using `Inquirer.js` prompts
 
-3. **Salaries**
-   - `employee_id` (Primary Key, Foreign Key)
-   - `base_salary`
-   - `bonus`
-   - `effective_date`
 
----
+## 📦 Installation
 
-## Setup Instructions
 
-Prerequisites
-Database Management System (e.g., MySQL, PostgreSQL, SQLite)
-Admin access to configure tables and roles
-
-Clone the Repo
+```bash
 git clone https://github.com/mauricek12d/Employee-Database.git
-cd employee-database
+cd Employee-Database
+npm install
+```
 
 
-CREATE DATABASE employee_db;
-USE employee_db;
-SOURCE schema.sql;
+Ensure you have MySQL installed and a database created. Import the schema provided in `db/schema.sql` and optionally seed data via `db/seeds.sql`.
 
 
-### Prerequisites
-
-- Database Management System (e.g., MySQL, PostgreSQL, SQLite)
-- Admin access to configure tables and roles
-
-## Contributions
-We welcome contributions to improve the Employee Database. Please follow these steps:
-
-Fork the repository and create a new branch
-git checkout -b feature/new-feature
-
-Commit your changes and push to your branch:
-git commit -m "Add new feature"
-git push origin feature/new-feature
-
-Submit a pull request and describe your changes.
-
-## Video Link
-
-https://drive.google.com/file/d/1QPvj0q8V0e6a9JEvpiedXhvPbzjU-8HZ/view
+## 🚀 Usage
 
 
+To start the application:
 
 
+```bash
+node index.js
+```
 
-### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mauricek12d/Employee-Database.git
-   cd employee-database
+You will be prompted to select from various employee management options in a dynamic menu.
+
+
+## 🛠️ Technologies Used
+
+
+- [Node.js](https://nodejs.org/)
+- [Inquirer.js](https://www.npmjs.com/package/inquirer)
+- [MySQL2](https://www.npmjs.com/package/mysql2)
+- JavaScript (ES6)
+- SQL
+
+
+## 🧮 Database Schema
+
+
+The database contains three tables:
+
+
+- `departments`
+- `roles`
+- `employees`
+
+
+Each table is related using foreign keys to reflect a normalized relational structure.
+
+
+## 🎥 Demo
+
+
+*(Optional)* Embed or link to a walkthrough video or screenshot of the application in use.
+
+
+## 📁 Folder Structure
+
+
+```
+Employee-Database/
+├── db/
+│   ├── schema.sql          # SQL script to create database schema
+│   ├── seeds.sql           # SQL seed data
+├── index.js                # Entry point with CLI logic
+├── package.json
+└── README.md
+```
+
+
+## 🤝 Contributing
+
+
+Contributions are welcome! 
+To contribute:
+
+
+1. Fork this repo 
+2. Create a branch (`git checkout -b feature/YourFeature`) 
+3. Commit your changes (`git commit -m 'Add feature'`) 
+4. Push to GitHub (`git push origin feature/YourFeature`) 
+5. Create a Pull Request
+
+
+## 📄 License
+
+
+This project is licensed under the [MIT License](./LICENSE).
+
+
+## 📬 Contact
+
+
+**Maurice Zuniga** 
+🔗 [LinkedIn](https://www.linkedin.com/in/maurice-zuniga424/) 
+💻 [GitHub](https://github.com/mauricek12d) 
+📧 [YourEmail@example.com]
+
+
+> 🧩 Built to simplify and streamline employee record management using SQL and Node.js.
+
 
 
 
